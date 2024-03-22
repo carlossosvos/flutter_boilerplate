@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/common/constants.dart';
+import 'package:flutter_boilerplate/core/common/constants.dart';
 import 'package:flutter_boilerplate/injection.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

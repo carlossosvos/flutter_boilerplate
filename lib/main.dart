@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/common/themes.dart';
+import 'package:flutter_boilerplate/core/common/themes.dart';
 import 'package:flutter_boilerplate/initialize.dart';
-import 'package:flutter_boilerplate/presentation/cubit/cubit.dart';
+import 'package:flutter_boilerplate/core/presentation/cubit/cubit.dart';
 
 Future<void> main() async {
   runZonedGuarded(() async {
