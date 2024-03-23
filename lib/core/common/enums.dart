@@ -1,12 +1,12 @@
 /// Represents the app routes and their paths.
 enum AppRoutes {
-  recipesList(
-    name: 'recipesList',
-    path: '/recipesList',
+  signIn(
+    name: 'signIn',
+    path: '/signIn',
   ),
-  recipeDetails(
-    name: 'recipeDetails',
-    path: '/recipeDetails',
+  signUp(
+    name: 'signUp',
+    path: '/signUp',
   );
 
   const AppRoutes({
@@ -16,13 +16,13 @@ enum AppRoutes {
 
   /// Represents the route name
   ///
-  /// Example: `AppRoutes.recipesList.name`
+  /// Example: `AppRoutes.signIn.name`
   /// Returns: 'recipesList'
   final String name;
 
   /// Represents the route path
   ///
-  /// Example: `AppRoutes.recipesList.path`
+  /// Example: `AppRoutes.signIn.path`
   /// Returns: '/recipesList'
   final String path;
 

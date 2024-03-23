@@ -27,8 +27,6 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'Flutter_Boilerplate',
           theme: isLightTheme ? lightTheme : darkTheme,
-          // darkTheme: darkTheme,
-          // themeMode: ThemeMode.system, // Default mode
           home: const MyHomePage(title: 'Flutter Boilerplate'),
         );
       }),
@@ -55,22 +53,22 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: [
+          IconButton(
+            onPressed: changeTheme,
+            icon: BlocBuilder<AppThemeCubit, bool>(
+              builder: (context, state) =>
+                  Icon(!state ? Icons.light_mode : Icons.dark_mode),
+            ),
+          ),
+        ],
       ),
       body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Press floating button to change theme ',
-            ),
-          ],
+          children: <Widget>[],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: changeTheme,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
