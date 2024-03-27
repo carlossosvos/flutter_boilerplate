@@ -7,7 +7,7 @@ Current folder strucuture would looks like this:
 ```
 assets/
 |-- fonts/
-|   images/
+|-- images/
 |
 lib/
 |-- data/
