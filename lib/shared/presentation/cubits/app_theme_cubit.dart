@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/core/utils/constants.dart';
-import 'package:flutter_boilerplate/di/injection.dart';
+import 'package:flutter_boilerplate/shared/core/utils/constants.dart';
+import 'package:flutter_boilerplate/shared/di/injection.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// The `AppThemeCubit` class in Dart is used to manage the application theme state and provides methods

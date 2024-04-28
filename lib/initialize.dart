@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_boilerplate/di/injection.dart';
+import 'package:flutter_boilerplate/shared/di/injection.dart';
 
 Future<void> initialize() async {
   WidgetsFlutterBinding.ensureInitialized();

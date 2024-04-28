@@ -3,9 +3,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/initialize.dart';
-import 'package:flutter_boilerplate/presentation/cubits/app_theme_cubit.dart';
-import 'package:flutter_boilerplate/presentation/pages/home_page.dart';
-import 'package:flutter_boilerplate/presentation/theme/themes.dart';
+
+import 'package:flutter_boilerplate/shared/presentation/cubits/app_theme_cubit.dart';
+import 'package:flutter_boilerplate/shared/presentation/pages/home_page.dart';
+
+import 'shared/presentation/theme/themes.dart';
 
 Future<void> main() async {
   runZonedGuarded(() async {
