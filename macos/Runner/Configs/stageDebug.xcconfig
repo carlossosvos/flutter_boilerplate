@@ -1,0 +1,7 @@
+#include "../../Flutter/stageDebug.xcconfig"
+#include "Warnings.xcconfig"
+
+FLUTTER_TARGET=lib/main_stage.dart
+ASSET_PREFIX=stage
+BUNDLE_NAME=My Boilerplate App Stage
+BUNDLE_DISPLAY_NAME=My Boilerplate App Stage

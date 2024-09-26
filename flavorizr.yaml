@@ -1,0 +1,31 @@
+flavors:
+  prod:
+    app:
+      name: "My Boilerplate App"
+
+    android:
+      applicationId: "com.cgcv.boilerplate"  
+    ios:
+      bundleId: "com.cgcv.boilerplate"
+    macos:
+      bundleId: "com.cgcv.boilerplate"  
+  dev:
+    app:
+      name: "My Boilerplate App Dev"
+
+    android:
+      applicationId: "com.cgcv.boilerplate.dev"  
+    ios:
+      bundleId: "com.cgcv.boilerplate.dev"
+    macos:
+      bundleId: "com.cgcv.boilerplate.dev"  
+  stage:
+    app:
+      name: "My Boilerplate App Stage"
+
+    android:
+      applicationId: "com.cgcv.boilerplate.stage"  
+    ios:
+      bundleId: "com.cgcv.boilerplate.stage"
+    macos:
+      bundleId: "com.cgcv.boilerplate.stage"  
