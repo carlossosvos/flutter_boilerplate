@@ -1,7 +1,9 @@
 // lib/data/repositories/auth_repository_impl.dart
+import 'package:injectable/injectable.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_boilerplate/sample_feature/domain/repositories/auth_repository.dart';
 
+@Singleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
   final SupabaseClient supabaseClient;
 

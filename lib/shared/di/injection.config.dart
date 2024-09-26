@@ -8,10 +8,15 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:flutter_boilerplate/sample_feature/domain/repositories/auth_repository.dart'
+    as _i1004;
+import 'package:flutter_boilerplate/sample_feature/domain/repositories/auth_repository_impl.dart'
+    as _i15;
 import 'package:flutter_boilerplate/shared/di/injection.dart' as _i345;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
+import 'package:supabase_flutter/supabase_flutter.dart' as _i454;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -29,6 +34,8 @@ extension GetItInjectableX on _i174.GetIt {
       () => registerModule.prefs,
       preResolve: true,
     );
+    gh.singleton<_i1004.AuthRepository>(
+        () => _i15.AuthRepositoryImpl(gh<_i454.SupabaseClient>()));
     return this;
   }
 }
