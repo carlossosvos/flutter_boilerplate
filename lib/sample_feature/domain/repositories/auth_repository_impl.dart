@@ -40,4 +40,14 @@ class AuthRepositoryImpl implements AuthRepository {
       throw Exception(e.toString());
     }
   }
+
+  @override
+  Future<void> logout() async {
+    // TODO: implement logout
+    try {
+      await supabaseClient.auth.signOut();
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
 }

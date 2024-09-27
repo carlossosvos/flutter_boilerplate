@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 final getIt = GetIt.instance;
 
@@ -10,6 +11,9 @@ final getIt = GetIt.instance;
 abstract class RegisterModule {
   @preResolve
   Future<SharedPreferences> get prefs => SharedPreferences.getInstance();
+
+  @lazySingleton
+  SupabaseClient get supabaseClient => Supabase.instance.client;
 }
 
 @InjectableInit()
