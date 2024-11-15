@@ -5,7 +5,6 @@ import 'package:flutter_boilerplate/sample_feature/presentation/cubits/auth_cubi
 import 'package:flutter_boilerplate/sample_feature/presentation/cubits/auth_state.dart';
 import 'package:flutter_boilerplate/sample_feature/presentation/pages/login_page.dart';
 import 'package:flutter_boilerplate/sample_feature/presentation/pages/register_page.dart';
-import 'package:flutter_boilerplate/shared/di/injection.dart';
 import 'package:flutter_boilerplate/shared/presentation/pages/home_page.dart';
 import 'package:go_router/go_router.dart';
 

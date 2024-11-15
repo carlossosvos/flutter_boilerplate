@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_boilerplate/shared/presentation/pages/home_page.dart';
 
 import 'flavors.dart';
-import 'pages/my_home_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -15,7 +15,9 @@ class App extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: _flavorBanner(
-        child: MyHomePage(),
+        child: MyHomePage(
+          title: F.title,
+        ),
         show: kDebugMode,
       ),
     );
