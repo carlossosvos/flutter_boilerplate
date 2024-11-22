@@ -43,6 +43,7 @@ dependencies:
   envied: ^0.5.4+1
   supabase_flutter: ^2.6.0
   bloc: ^8.1.4
+  google_fonts: ^6.2.1
   
 
 dev_dependencies:

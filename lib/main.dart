@@ -5,10 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/app_router.dart';
 import 'package:flutter_boilerplate/flavors.dart';
 import 'package:flutter_boilerplate/initialize.dart';
-import 'package:flutter_boilerplate/sample_feature/domain/repositories/auth_repository.dart';
-import 'package:flutter_boilerplate/sample_feature/presentation/cubits/auth_cubit.dart';
+import 'package:flutter_boilerplate/auth/domain/repositories/auth_repository.dart';
+import 'package:flutter_boilerplate/auth/presentation/cubits/auth_cubit.dart';
 import 'package:flutter_boilerplate/shared/di/injection.dart';
 import 'package:flutter_boilerplate/shared/presentation/cubits/app_theme_cubit.dart';
+import 'package:flutter_boilerplate/shared/presentation/theme/texts.dart';
 import 'package:flutter_boilerplate/shared/presentation/theme/themes.dart';
 
 Future<void> main() async {
@@ -41,11 +42,22 @@ class MyApp extends StatelessWidget {
           final theme =
               context.watch<AppThemeCubit>().state ? lightTheme : darkTheme;
 
-          return MaterialApp.router(
-            routerConfig: AppRouter.router,
-            title: 'GoRouter Authentication Example',
-            theme: theme,
+          final textThene = createTextTheme(
+            context,
+            "Advent Pro",
+            "Advent Pro",
+            theme,
           );
+
+          return MaterialApp.router(
+              routerConfig: AppRouter.router,
+              title: 'GoRouter Authentication Example',
+              //theme: theme.copyWith(
+              //  textTheme: textThene,
+              //),
+              theme: theme.copyWith(
+                textTheme: textThene,
+              ));
         }));
   }
 }

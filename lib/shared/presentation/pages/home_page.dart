@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/sample_feature/presentation/cubits/auth_cubit.dart';
-import 'package:flutter_boilerplate/sample_feature/presentation/cubits/auth_state.dart';
+import 'package:flutter_boilerplate/auth/presentation/cubits/auth_cubit.dart';
+import 'package:flutter_boilerplate/auth/presentation/cubits/auth_state.dart';
 import 'package:flutter_boilerplate/shared/presentation/cubits/app_theme_cubit.dart';
+import 'package:flutter_boilerplate/shared/presentation/widgets/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -24,40 +25,36 @@ class MyHomePage extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        actions: [
-          IconButton(
-            onPressed: changeTheme,
-            icon: BlocBuilder<AppThemeCubit, bool>(
-              builder: (context, state) =>
-                  Icon(!state ? Icons.light_mode : Icons.dark_mode),
-            ),
-          ),
-          IconButton(
-            onPressed: logout,
-            icon: BlocConsumer<AuthCubit, AuthState>(
-              builder: (context, state) => Icon(
-                Icons.logout,
+        appBar: AppBar(
+          title: Text(title),
+          actions: [
+            IconButton(
+              onPressed: changeTheme,
+              icon: BlocBuilder<AppThemeCubit, bool>(
+                builder: (context, state) =>
+                    Icon(!state ? Icons.light_mode : Icons.dark_mode),
               ),
-              listener: (
-                listenerContext,
-                state,
-              ) {
-                if (state is AuthInitial) {
-                  GoRouter.of(listenerContext).go('/'); // Naviga
-                }
-              },
             ),
-          ),
-        ],
-      ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
+            IconButton(
+              onPressed: logout,
+              icon: BlocConsumer<AuthCubit, AuthState>(
+                builder: (context, state) => Icon(
+                  Icons.logout,
+                ),
+                listener: (
+                  listenerContext,
+                  state,
+                ) {
+                  if (state is AuthInitial) {
+                    GoRouter.of(listenerContext).go('/'); // Naviga
+                  }
+                },
+              ),
+            ),
+          ],
         ),
-      ),
-    );
+        body: ScreenLayout(
+          children: [],
+        ));
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/sample_feature/presentation/cubits/auth_cubit.dart';
-import 'package:flutter_boilerplate/sample_feature/presentation/cubits/auth_state.dart';
+import 'package:flutter_boilerplate/auth/presentation/cubits/auth_cubit.dart';
+import 'package:flutter_boilerplate/auth/presentation/cubits/auth_state.dart';
 import 'package:flutter_boilerplate/shared/presentation/widgets/widgets.dart';
 import 'package:go_router/go_router.dart';
 
@@ -17,7 +17,7 @@ class RegisterPage extends StatelessWidget {
       body: BlocConsumer<AuthCubit, AuthState>(
         listener: (listenerContext, state) {
           if (state is AuthSuccess) {
-            print("SUCCESSFUL Register");
+            debugPrint("SUCCESSFUL Register");
             GoRouter.of(listenerContext)
                 .go('/'); // Navigate to the home page on success
           } else if (state is AuthFailure) {
