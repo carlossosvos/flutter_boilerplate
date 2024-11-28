@@ -2,13 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/app_router.dart';
+import 'package:flutter_boilerplate/shared/presentation/router/app_router.dart';
 import 'package:flutter_boilerplate/flavors.dart';
 import 'package:flutter_boilerplate/initialize.dart';
 import 'package:flutter_boilerplate/auth/domain/repositories/auth_repository.dart';
 import 'package:flutter_boilerplate/auth/presentation/cubits/auth_cubit.dart';
 import 'package:flutter_boilerplate/shared/di/injection.dart';
 import 'package:flutter_boilerplate/shared/presentation/cubits/app_theme_cubit.dart';
+import 'package:flutter_boilerplate/shared/presentation/theme/buttons.dart';
+import 'package:flutter_boilerplate/shared/presentation/theme/inputs.dart';
 import 'package:flutter_boilerplate/shared/presentation/theme/texts.dart';
 import 'package:flutter_boilerplate/shared/presentation/theme/themes.dart';
 
@@ -48,15 +50,17 @@ class MyApp extends StatelessWidget {
             "Advent Pro",
             theme,
           );
+          final elevatedButtonTheme = createElevatedButtonThemeData(theme);
+
+          final inputTheme = InputTheme().inputTheme(theme);
 
           return MaterialApp.router(
-              routerConfig: AppRouter.router,
-              title: 'GoRouter Authentication Example',
-              //theme: theme.copyWith(
-              //  textTheme: textThene,
-              //),
+              routerConfig: AppRouter().getRouter,
+              title: 'Flutter Boilerplate',
               theme: theme.copyWith(
                 textTheme: textThene,
+                inputDecorationTheme: inputTheme,
+                elevatedButtonTheme: elevatedButtonTheme,
               ));
         }));
   }

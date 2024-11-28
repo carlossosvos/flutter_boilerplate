@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/auth/presentation/cubits/auth_cubit.dart';
 import 'package:flutter_boilerplate/auth/presentation/cubits/auth_state.dart';
+import 'package:flutter_boilerplate/shared/presentation/widgets/atoms/main_button.dart';
 import 'package:flutter_boilerplate/shared/presentation/widgets/widgets.dart';
 import 'package:go_router/go_router.dart';
 
@@ -35,32 +36,34 @@ class RegisterPage extends StatelessWidget {
             horizontal: 16,
           ),
           child: ScreenLayout(children: [
-            if (authState is AuthLoading)
-              Center(child: CircularProgressIndicator())
-            else ...[
-              Spacer(),
-              TextField(
-                  controller: _emailController,
-                  decoration: InputDecoration(labelText: 'Email')),
-              TextField(
-                controller: _passwordController,
-                decoration: InputDecoration(labelText: 'Password'),
-                obscureText: true,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  final email = _emailController.text;
-                  final password = _passwordController.text;
-                  context.read<AuthCubit>().register(email, password);
-                },
-                child: Text('Register'),
-              ),
-              Spacer(),
-              TextButton(
-                onPressed: () => GoRouter.of(authContext).go('/'),
-                child: Text('Log In'),
-              )
-            ],
+            Spacer(),
+            MainInput(
+              controller: _emailController,
+              keyboardType: TextInputType.text,
+              hintText: 'user@domain.com',
+              label: 'Email',
+            ),
+            MainInput(
+              controller: _passwordController,
+              label: 'Password',
+              hintText: '••••••••',
+              obscureText: true,
+            ),
+            MainButton(
+              label: 'Register',
+              onPressed: () {
+                final email = _emailController.text;
+                final password = _passwordController.text;
+                context.read<AuthCubit>().register(email, password);
+              },
+              isEnabled: authState is! AuthLoading,
+              isLoading: authState is AuthLoading,
+            ),
+            Spacer(),
+            TextButton(
+              onPressed: () => GoRouter.of(authContext).go('/'),
+              child: Text('Log In'),
+            )
           ]),
         ),
       ),

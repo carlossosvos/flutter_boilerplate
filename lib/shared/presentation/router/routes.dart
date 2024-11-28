@@ -1,1 +1,5 @@
-class AppRoutes {}
+enum AppRoutes {
+  home,
+  login,
+  register,
+}

@@ -45,6 +45,7 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   Future<void> logout() async {
+    emit(AuthLoading());
     final LogoutUseCase logoutUseCase = LogoutUseCase(authRepository);
     await logoutUseCase.execute();
     emit(AuthInitial()); // Clear authentication state
