@@ -49,4 +49,10 @@ class AuthRepositoryImpl implements AuthRepository {
       throw Exception(e.toString());
     }
   }
+
+  @override
+  Future<bool> isAuthenticated() async {
+    final session = supabaseClient.auth.currentSession;
+    return session != null && session.user != null;
+  }
 }

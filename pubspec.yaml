@@ -33,6 +33,10 @@ dependencies:
   dio: ^5.4.1
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  intl: ^0.19.0
   flutter_bloc: ^8.1.4
   get_it: ^7.6.7
   go_router: ^14.2.8
@@ -54,15 +58,20 @@ dev_dependencies:
     sdk: flutter
   very_good_analysis: ^6.0.0
   envied_generator: ^0.5.4+1
+  intl_utils: ^2.5.0
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-# The following section is specific to Flutter packages.
 flutter:
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
+  generate: true
+  assets:
+    - lib/l10n/
+
+flutter_intl:
+  enabled: true
+  arb_dir: lib/l10n
+  output_dir: lib/generated
+  class_name: S
+  main_locale: en
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

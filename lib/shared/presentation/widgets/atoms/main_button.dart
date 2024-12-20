@@ -23,7 +23,7 @@ class MainButton extends StatelessWidget {
 
     final disabledStyle = ElevatedButton.styleFrom(
       backgroundColor: theme.disabledColor,
-      foregroundColor: theme.colorScheme.onSurface.withOpacity(0.38),
+      foregroundColor: theme.colorScheme.onSurface.withValues(alpha: 0.38),
       elevation: 0.0,
     );
 

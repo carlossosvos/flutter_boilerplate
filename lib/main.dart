@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_boilerplate/shared/presentation/cubits/locale_cubit.dart';
 import 'package:flutter_boilerplate/shared/presentation/router/app_router.dart';
 import 'package:flutter_boilerplate/flavors.dart';
 import 'package:flutter_boilerplate/initialize.dart';
@@ -13,6 +14,8 @@ import 'package:flutter_boilerplate/shared/presentation/theme/buttons.dart';
 import 'package:flutter_boilerplate/shared/presentation/theme/inputs.dart';
 import 'package:flutter_boilerplate/shared/presentation/theme/texts.dart';
 import 'package:flutter_boilerplate/shared/presentation/theme/themes.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'generated/l10n.dart';
 
 Future<void> main() async {
   F.appFlavor = Flavor.prod;
@@ -37,7 +40,11 @@ class MyApp extends StatelessWidget {
             create: (_) => AppThemeCubit(),
           ),
           BlocProvider(
-            create: (_) => AuthCubit(authRepository: getIt<AuthRepository>()),
+            create: (_) => LocaleCubit(),
+          ),
+          BlocProvider(
+            create: (_) => AuthCubit(authRepository: getIt<AuthRepository>())
+              ..checkAuthStatus(),
           )
         ],
         child: Builder(builder: (context) {
@@ -51,10 +58,19 @@ class MyApp extends StatelessWidget {
             theme,
           );
           final elevatedButtonTheme = createElevatedButtonThemeData(theme);
+          final selectedLocale = context.watch<LocaleCubit>().state;
 
           final inputTheme = InputTheme().inputTheme(theme);
 
           return MaterialApp.router(
+              localizationsDelegates: [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate
+              ],
+              locale: selectedLocale,
+              supportedLocales: S.delegate.supportedLocales,
               routerConfig: AppRouter().getRouter,
               title: 'Flutter Boilerplate',
               theme: theme.copyWith(

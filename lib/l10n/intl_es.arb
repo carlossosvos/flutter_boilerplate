@@ -1,0 +1,7 @@
+{
+  "@@locale": "es",
+  "app_title": "Mi Aplicación",
+  "app_message": "Hola Mundo",
+  "settings_language": "Seleccionar Idioma",
+  "settings_theme": "Seleccionar Tema"
+}
