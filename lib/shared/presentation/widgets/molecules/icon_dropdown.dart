@@ -11,7 +11,7 @@ class IconDropdown<T> extends StatelessWidget {
   final double? height;
 
   const IconDropdown({
-    Key? key,
+    super.key,
     required this.value,
     required this.items,
     required this.onChanged,
@@ -19,7 +19,7 @@ class IconDropdown<T> extends StatelessWidget {
     this.hint = '',
     this.width,
     this.height,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
