@@ -3,5 +3,11 @@
   "app_title": "My App",
   "app_message": "Hello World",
   "settings_language": "Select Language",
-  "settings_theme": "Select Theme"
+  "settings_theme": "Select Theme",
+  "show_dialog": "Show Dialog",
+  "example_dialog_title": "Title of Alert Dialog",
+  "example_dialog_message": "Message of Alert Dialog",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "ok": "OK"
 }

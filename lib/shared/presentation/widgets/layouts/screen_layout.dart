@@ -18,23 +18,29 @@ class ScreenLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: double.infinity,
-      width: double.infinity,
-      decoration: backgroundGradient != null
-          ? BoxDecoration(
-              gradient: backgroundGradient,
-            )
-          : BoxDecoration(
-              color: backgroundColor,
-            ),
-      child: SafeArea(
-        child: enableRefreshIndicator && onRefresh != null
-            ? RefreshIndicator(
-                onRefresh: onRefresh!,
-                child: _buildColumn(),
+    return OrientationBuilder(
+      builder: (
+        BuildContext context,
+        Orientation orientation,
+      ) =>
+          Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: backgroundGradient != null
+            ? BoxDecoration(
+                gradient: backgroundGradient,
               )
-            : _buildColumn(),
+            : BoxDecoration(
+                color: backgroundColor,
+              ),
+        child: SafeArea(
+          child: enableRefreshIndicator && onRefresh != null
+              ? RefreshIndicator(
+                  onRefresh: onRefresh!,
+                  child: _buildColumn(),
+                )
+              : _buildColumn(),
+        ),
       ),
     );
   }

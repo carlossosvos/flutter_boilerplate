@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/shared/presentation/cubits/locale_cubit.dart';
 import 'package:flutter_boilerplate/shared/presentation/router/app_router.dart';
@@ -19,6 +20,7 @@ import 'generated/l10n.dart';
 
 Future<void> main() async {
   F.appFlavor = Flavor.prod;
+
   runZonedGuarded(
     () async {
       await initialize();

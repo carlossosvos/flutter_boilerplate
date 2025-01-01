@@ -7,9 +7,16 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 Future<void> initialize() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  //SystemChrome.setPreferredOrientations([
+  //  DeviceOrientation.portraitUp,
+  //  //DeviceOrientation.portraitDown,
+  //]);
+
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
-    //DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
   ]);
 
   await Supabase.initialize(

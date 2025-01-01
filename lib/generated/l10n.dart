@@ -89,6 +89,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Show Dialog`
+  String get show_dialog {
+    return Intl.message(
+      'Show Dialog',
+      name: 'show_dialog',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title of Alert Dialog`
+  String get example_dialog_title {
+    return Intl.message(
+      'Title of Alert Dialog',
+      name: 'example_dialog_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Message of Alert Dialog`
+  String get example_dialog_message {
+    return Intl.message(
+      'Message of Alert Dialog',
+      name: 'example_dialog_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OK`
+  String get ok {
+    return Intl.message(
+      'OK',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

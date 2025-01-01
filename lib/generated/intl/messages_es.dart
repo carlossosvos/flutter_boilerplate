@@ -24,9 +24,18 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "app_message": MessageLookupByLibrary.simpleMessage("Hola Mundo"),
         "app_title": MessageLookupByLibrary.simpleMessage("Mi Aplicación"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirmar"),
+        "example_dialog_message": MessageLookupByLibrary.simpleMessage(
+            "Mensaje de Ventana Emergente"),
+        "example_dialog_title":
+            MessageLookupByLibrary.simpleMessage("Titulo de Ventana Emergente"),
+        "ok": MessageLookupByLibrary.simpleMessage("Aceptar"),
         "settings_language":
             MessageLookupByLibrary.simpleMessage("Seleccionar Idioma"),
         "settings_theme":
-            MessageLookupByLibrary.simpleMessage("Seleccionar Tema")
+            MessageLookupByLibrary.simpleMessage("Seleccionar Tema"),
+        "show_dialog":
+            MessageLookupByLibrary.simpleMessage("Mostrar Ventana Emergente")
       };
 }

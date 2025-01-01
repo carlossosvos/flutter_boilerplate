@@ -3,5 +3,11 @@
   "app_title": "Mi Aplicación",
   "app_message": "Hola Mundo",
   "settings_language": "Seleccionar Idioma",
-  "settings_theme": "Seleccionar Tema"
+  "settings_theme": "Seleccionar Tema",
+  "show_dialog": "Mostrar Ventana Emergente",
+  "example_dialog_title": "Titulo de Ventana Emergente",
+  "example_dialog_message": "Mensaje de Ventana Emergente",
+  "cancel": "Cancelar",
+  "confirm": "Confirmar",
+  "ok": "Aceptar"
 }

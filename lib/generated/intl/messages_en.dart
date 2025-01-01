@@ -24,8 +24,16 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "app_message": MessageLookupByLibrary.simpleMessage("Hello World"),
         "app_title": MessageLookupByLibrary.simpleMessage("My App"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "example_dialog_message":
+            MessageLookupByLibrary.simpleMessage("Message of Alert Dialog"),
+        "example_dialog_title":
+            MessageLookupByLibrary.simpleMessage("Title of Alert Dialog"),
+        "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "settings_language":
             MessageLookupByLibrary.simpleMessage("Select Language"),
-        "settings_theme": MessageLookupByLibrary.simpleMessage("Select Theme")
+        "settings_theme": MessageLookupByLibrary.simpleMessage("Select Theme"),
+        "show_dialog": MessageLookupByLibrary.simpleMessage("Show Dialog")
       };
 }
