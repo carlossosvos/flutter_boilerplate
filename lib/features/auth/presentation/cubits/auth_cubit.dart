@@ -1,9 +1,9 @@
 // lib/presentation/cubit/auth_cubit.dart
 import 'package:bloc/bloc.dart';
-import 'package:flutter_boilerplate/auth/domain/repositories/auth_repository.dart';
-import 'package:flutter_boilerplate/auth/domain/usecases/login_usecase.dart';
-import 'package:flutter_boilerplate/auth/domain/usecases/logout_usecase.dart';
-import 'package:flutter_boilerplate/auth/domain/usecases/register_usecase.dart';
+import 'package:flutter_boilerplate/features/auth/domain/repositories/auth_repository.dart';
+import 'package:flutter_boilerplate/features/auth/domain/usecases/login_usecase.dart';
+import 'package:flutter_boilerplate/features/auth/domain/usecases/logout_usecase.dart';
+import 'package:flutter_boilerplate/features/auth/domain/usecases/register_usecase.dart';
 import 'package:injectable/injectable.dart';
 
 import 'auth_state.dart';

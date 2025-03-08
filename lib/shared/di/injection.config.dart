@@ -8,11 +8,11 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter_boilerplate/auth/domain/repositories/auth_repository.dart'
+import 'package:flutter_boilerplate/features/auth/domain/repositories/auth_repository.dart'
     as _i117;
-import 'package:flutter_boilerplate/auth/domain/repositories/auth_repository_impl.dart'
+import 'package:flutter_boilerplate/features/auth/domain/repositories/auth_repository_impl.dart'
     as _i903;
-import 'package:flutter_boilerplate/auth/presentation/cubits/auth_cubit.dart'
+import 'package:flutter_boilerplate/features/auth/presentation/cubits/auth_cubit.dart'
     as _i369;
 import 'package:flutter_boilerplate/shared/di/injection.dart' as _i345;
 import 'package:get_it/get_it.dart' as _i174;

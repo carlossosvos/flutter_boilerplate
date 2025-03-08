@@ -1,7 +1,7 @@
 // lib/data/repositories/auth_repository_impl.dart
 import 'package:injectable/injectable.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:flutter_boilerplate/auth/domain/repositories/auth_repository.dart';
+import 'package:flutter_boilerplate/features/auth/domain/repositories/auth_repository.dart';
 
 @Singleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
@@ -53,6 +53,6 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<bool> isAuthenticated() async {
     final session = supabaseClient.auth.currentSession;
-    return session != null && session.user != null;
+    return session != null || session?.user != null;
   }
 }

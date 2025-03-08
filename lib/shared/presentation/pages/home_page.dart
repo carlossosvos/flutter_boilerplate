@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/auth/presentation/cubits/auth_cubit.dart';
-import 'package:flutter_boilerplate/auth/presentation/cubits/auth_state.dart';
+import 'package:flutter_boilerplate/features/auth/presentation/cubits/auth_cubit.dart';
+import 'package:flutter_boilerplate/features/auth/presentation/cubits/auth_state.dart';
 import 'package:flutter_boilerplate/generated/l10n.dart';
 import 'package:flutter_boilerplate/shared/presentation/cubits/app_theme_cubit.dart';
 import 'package:flutter_boilerplate/shared/presentation/widgets/molecules/locale_popup_menu.dart';
@@ -41,23 +41,23 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
+  void _changeTheme(BuildContext context) {
+    context.read<AppThemeCubit>().changeTheme();
+  }
+
+  void _logout(BuildContext context) {
+    context.read<AuthCubit>().logout();
+  }
+
   @override
   Widget build(BuildContext context) {
-    void changeTheme() {
-      context.read<AppThemeCubit>().changeTheme();
-    }
-
-    void logout() {
-      context.read<AuthCubit>().logout();
-    }
-
     return Scaffold(
         appBar: AppBar(
           title: Text(title),
           actions: [
             LocalePopupMenu(),
             IconButton(
-              onPressed: changeTheme,
+              onPressed: () => _changeTheme(context),
               icon: BlocBuilder<AppThemeCubit, bool>(
                 builder: (context, state) => Icon(
                   !state ? Icons.light_mode : Icons.dark_mode,
@@ -65,7 +65,7 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: logout,
+              onPressed: () => _logout(context),
               icon: BlocConsumer<AuthCubit, AuthState>(
                 builder: (context, state) => Icon(
                   Icons.logout,
@@ -85,6 +85,7 @@ class MyHomePage extends StatelessWidget {
         body: ScreenLayout(
           children: [
             Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [

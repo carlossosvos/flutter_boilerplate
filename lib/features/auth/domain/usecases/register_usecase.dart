@@ -1,5 +1,5 @@
 // lib/domain/usecases/register_usecase.dart
-import 'package:flutter_boilerplate/auth/domain/repositories/auth_repository.dart';
+import 'package:flutter_boilerplate/features/auth/domain/repositories/auth_repository.dart';
 
 class RegisterUseCase {
   final AuthRepository authRepository;

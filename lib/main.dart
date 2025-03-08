@@ -1,14 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/shared/presentation/cubits/locale_cubit.dart';
 import 'package:flutter_boilerplate/shared/presentation/router/app_router.dart';
 import 'package:flutter_boilerplate/flavors.dart';
 import 'package:flutter_boilerplate/initialize.dart';
-import 'package:flutter_boilerplate/auth/domain/repositories/auth_repository.dart';
-import 'package:flutter_boilerplate/auth/presentation/cubits/auth_cubit.dart';
+import 'package:flutter_boilerplate/features/auth/domain/repositories/auth_repository.dart';
+import 'package:flutter_boilerplate/features/auth/presentation/cubits/auth_cubit.dart';
 import 'package:flutter_boilerplate/shared/di/injection.dart';
 import 'package:flutter_boilerplate/shared/presentation/cubits/app_theme_cubit.dart';
 import 'package:flutter_boilerplate/shared/presentation/theme/buttons.dart';
@@ -45,8 +44,9 @@ class MyApp extends StatelessWidget {
             create: (_) => LocaleCubit(),
           ),
           BlocProvider(
-            create: (_) => AuthCubit(authRepository: getIt<AuthRepository>())
-              ..checkAuthStatus(),
+            create: (_) => AuthCubit(
+              authRepository: getIt<AuthRepository>(),
+            )..checkAuthStatus(),
           )
         ],
         child: Builder(builder: (context) {
@@ -59,6 +59,7 @@ class MyApp extends StatelessWidget {
             "Advent Pro",
             theme,
           );
+
           final elevatedButtonTheme = createElevatedButtonThemeData(theme);
           final selectedLocale = context.watch<LocaleCubit>().state;
 

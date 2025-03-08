@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/auth/presentation/cubits/auth_cubit.dart';
-import 'package:flutter_boilerplate/auth/presentation/cubits/auth_state.dart';
+import 'package:flutter_boilerplate/features/auth/presentation/cubits/auth_cubit.dart';
+import 'package:flutter_boilerplate/features/auth/presentation/cubits/auth_state.dart';
 import 'package:flutter_boilerplate/shared/presentation/widgets/atoms/main_button.dart';
 import 'package:flutter_boilerplate/shared/presentation/widgets/widgets.dart';
 import 'package:go_router/go_router.dart';

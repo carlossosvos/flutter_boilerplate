@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/flavors.dart';
-import 'package:flutter_boilerplate/auth/presentation/cubits/auth_cubit.dart';
-import 'package:flutter_boilerplate/auth/presentation/cubits/auth_state.dart';
-import 'package:flutter_boilerplate/auth/presentation/pages/login_page.dart';
-import 'package:flutter_boilerplate/auth/presentation/pages/register_page.dart';
+import 'package:flutter_boilerplate/features/auth/presentation/cubits/auth_cubit.dart';
+import 'package:flutter_boilerplate/features/auth/presentation/cubits/auth_state.dart';
+import 'package:flutter_boilerplate/features/auth/presentation/pages/login_page.dart';
+import 'package:flutter_boilerplate/features/auth/presentation/pages/register_page.dart';
 import 'package:flutter_boilerplate/shared/presentation/pages/home_page.dart';
 import 'package:go_router/go_router.dart';
 
