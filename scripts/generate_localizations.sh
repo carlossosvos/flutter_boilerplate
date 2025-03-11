@@ -1,5 +1,3 @@
-# filepath: /Users/cgcasco/development/mystufff/flutter_boilerplate/scripts/generate_localizations.sh
-#!/bin/bash
 
 # Navigate to the project root directory
 cd "$(dirname "$0")/../.."

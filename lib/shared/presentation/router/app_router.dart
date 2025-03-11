@@ -1,7 +1,7 @@
 // lib/app_router.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/flavors.dart';
+import 'package:flutter_boilerplate/core/config/flavors.dart';
 import 'package:flutter_boilerplate/features/auth/presentation/cubits/auth_cubit.dart';
 import 'package:flutter_boilerplate/features/auth/presentation/cubits/auth_state.dart';
 import 'package:flutter_boilerplate/features/auth/presentation/pages/login_page.dart';

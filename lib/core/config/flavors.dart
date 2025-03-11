@@ -12,11 +12,11 @@ class F {
   static String get title {
     switch (appFlavor) {
       case Flavor.prod:
-        return 'My Boilerplate App';
+        return 'BOILERPLATE_PROD';
       case Flavor.dev:
-        return 'My Boilerplate App Dev';
+        return 'BOILERPLATE_DEV';
       case Flavor.stage:
-        return 'My Boilerplate App Stage';
+        return 'BOILERPLATE_STAGE';
       default:
         return 'title';
     }
