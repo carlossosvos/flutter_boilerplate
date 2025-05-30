@@ -30,7 +30,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Mensaje de Ventana Emergente"),
         "example_dialog_title":
             MessageLookupByLibrary.simpleMessage("Titulo de Ventana Emergente"),
+        "home": MessageLookupByLibrary.simpleMessage("Inicio"),
         "ok": MessageLookupByLibrary.simpleMessage("Aceptar"),
+        "profile": MessageLookupByLibrary.simpleMessage("Perfil"),
+        "settings": MessageLookupByLibrary.simpleMessage("Ajustes"),
         "settings_language":
             MessageLookupByLibrary.simpleMessage("Seleccionar Idioma"),
         "settings_theme":

@@ -9,5 +9,8 @@
   "example_dialog_message": "Message of Alert Dialog",
   "cancel": "Cancel",
   "confirm": "Confirm",
-  "ok": "OK"
+  "ok": "OK",
+  "home": "Home",
+  "settings": "Settings",
+  "profile": "Profile"
 }

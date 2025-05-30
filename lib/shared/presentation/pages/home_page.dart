@@ -9,8 +9,8 @@ import 'package:flutter_boilerplate/shared/presentation/widgets/organisms/custom
 import 'package:flutter_boilerplate/shared/presentation/widgets/widgets.dart';
 import 'package:go_router/go_router.dart';
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({
+class HomePage extends StatelessWidget {
+  const HomePage({
     super.key,
     required this.title,
   });

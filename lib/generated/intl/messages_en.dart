@@ -30,7 +30,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Message of Alert Dialog"),
         "example_dialog_title":
             MessageLookupByLibrary.simpleMessage("Title of Alert Dialog"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "settings_language":
             MessageLookupByLibrary.simpleMessage("Select Language"),
         "settings_theme": MessageLookupByLibrary.simpleMessage("Select Theme"),

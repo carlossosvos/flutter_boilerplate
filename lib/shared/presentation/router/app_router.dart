@@ -7,14 +7,17 @@ import 'package:flutter_boilerplate/features/auth/presentation/cubits/auth_state
 import 'package:flutter_boilerplate/features/auth/presentation/pages/login_page.dart';
 import 'package:flutter_boilerplate/features/auth/presentation/pages/register_page.dart';
 import 'package:flutter_boilerplate/shared/presentation/pages/home_page.dart';
+import 'package:flutter_boilerplate/shared/presentation/pages/profile_page.dart';
+import 'package:flutter_boilerplate/shared/presentation/pages/settings_page.dart';
+import 'package:flutter_boilerplate/shared/presentation/widgets/molecules/floating_nav_bar.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
   final _rootNavigatorKey = GlobalKey<NavigatorState>();
-  //final _sectionNavigatorKey = GlobalKey<NavigatorState>();
 
   GoRouter get getRouter => GoRouter(
         navigatorKey: _rootNavigatorKey,
+        initialLocation: '/',
         // Redirect logic based on authentication state
         redirect: (context, state) {
           final isLoggedIn = context.read<AuthCubit>().state is AuthSuccess;
@@ -33,28 +36,6 @@ class AppRouter {
         },
 
         routes: [
-          //StatefulShellRoute.indexedStack(
-          //  parentNavigatorKey: _sectionNavigatorKey,
-          //  branches: [
-          //    StatefulShellBranch(routes: [
-          //      GoRoute(
-          //        path: '/',
-          //        builder: (_, __) => MyHomePage(
-          //          title: F.appFlavor?.name ?? '',
-          //        ),
-          //      ),
-          //    ])
-          //  ],
-          //),
-
-          // Define your app routes here
-          GoRoute(
-            path: '/',
-            builder: (_, __) => MyHomePage(
-              title: F.appFlavor?.name ?? '',
-            ),
-          ),
-
           GoRoute(
             path: '/login',
             builder: (_, __) => LoginPage(),
@@ -62,6 +43,46 @@ class AppRouter {
           GoRoute(
             path: '/register',
             builder: (_, __) => RegisterPage(),
+          ),
+          StatefulShellRoute.indexedStack(
+            builder: (context, state, navigationShell) {
+              return Scaffold(
+                extendBody: true, // Important for floating bar
+                body: navigationShell,
+                bottomNavigationBar: FloatingNavBar(
+                  currentIndex: navigationShell.currentIndex,
+                  onTap: navigationShell.goBranch,
+                ),
+              );
+            },
+            branches: [
+              StatefulShellBranch(
+                routes: [
+                  GoRoute(
+                    path: '/',
+                    builder: (_, __) => HomePage(
+                      title: F.appFlavor?.name ?? '',
+                    ),
+                  ),
+                ],
+              ),
+              StatefulShellBranch(
+                routes: [
+                  GoRoute(
+                    path: '/profile',
+                    builder: (_, __) => const ProfilePage(),
+                  ),
+                ],
+              ),
+              StatefulShellBranch(
+                routes: [
+                  GoRoute(
+                    path: '/settings',
+                    builder: (_, __) => const SettingsPage(),
+                  ),
+                ],
+              ),
+            ],
           ),
         ],
       );

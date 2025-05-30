@@ -47,3 +47,4 @@ app.*.map.json
 #Environment Vairables
 *.env
 env.g.dart
+!example.env

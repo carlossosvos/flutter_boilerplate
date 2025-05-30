@@ -9,5 +9,8 @@
   "example_dialog_message": "Mensaje de Ventana Emergente",
   "cancel": "Cancelar",
   "confirm": "Confirmar",
-  "ok": "Aceptar"
+  "ok": "Aceptar",
+  "home": "Inicio",
+  "settings": "Ajustes",
+  "profile": "Perfil"
 }
