@@ -12,5 +12,10 @@
   "ok": "OK",
   "home": "Home",
   "settings": "Settings",
-  "profile": "Profile"
+  "profile": "Profile",
+  "dark_mode": "Dark Mode",
+  "language": "Language",
+  "log_out": "Log Out",
+  "log_in": "Log In",
+  "register": "Register"
 }

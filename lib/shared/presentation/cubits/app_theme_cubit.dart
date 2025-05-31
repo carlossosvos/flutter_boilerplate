@@ -7,9 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// The `AppThemeCubit` class in Dart is used to manage the application theme state and provides methods
 /// to initialize and change the theme.
 class AppThemeCubit extends Cubit<bool> {
-  AppThemeCubit() : super(true) {
-    initialize();
-  }
+  AppThemeCubit() : super(true); // true = light theme
 
   /// The `initialize` function in Dart is an asynchronous function that does not return any value.
   Future<void> initialize() async {
@@ -22,7 +20,8 @@ class AppThemeCubit extends Cubit<bool> {
 
   /// The above function changes the theme by toggling the current state.
   Future<void> changeTheme() async {
-    getIt<SharedPreferences>().setBool(PreferencesConstants.themeKey, !state);
-    emit(!state);
+    final newTheme = !state;
+    getIt<SharedPreferences>().setBool(PreferencesConstants.themeKey, newTheme);
+    emit(newTheme);
   }
 }

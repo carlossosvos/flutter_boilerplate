@@ -1,4 +1,3 @@
-// filepath: /Users/cgcasco/development/mystufff/flutter_boilerplate/lib/shared/presentation/widgets/molecules/locale_dropdown.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/generated/l10n.dart';
 import 'package:flutter_boilerplate/shared/presentation/widgets/molecules/icon_popup_menu.dart';

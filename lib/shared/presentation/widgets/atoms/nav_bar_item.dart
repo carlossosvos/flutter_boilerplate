@@ -26,15 +26,16 @@ class NavBarItem extends StatelessWidget {
           Icon(
             icon,
             color: isSelected
-                ? Theme.of(context).colorScheme.primary
-                : Theme.of(context).colorScheme.onSurface.withOpacity(0.64),
+                ? Theme.of(context).colorScheme.inverseSurface
+                : Theme.of(context).colorScheme.onSurface.withOpacity(2 / 3),
           ),
           Text(
             label,
             style: TextStyle(
+              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
               color: isSelected
-                  ? Theme.of(context).colorScheme.primary
-                  : Theme.of(context).colorScheme.onSurface.withOpacity(0.64),
+                  ? Theme.of(context).colorScheme.inverseSurface
+                  : Theme.of(context).colorScheme.onSurface.withOpacity(2 / 3),
               fontSize: 12,
             ),
           ),

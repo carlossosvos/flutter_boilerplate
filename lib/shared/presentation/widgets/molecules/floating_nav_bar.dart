@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/generated/l10n.dart';
 import '../atoms/nav_bar_item.dart';
 
+/// The `FloatingNavBar` class represents a floating navigation bar widget in Dart that allows users to
+/// switch between different sections with icons and labels.
 class FloatingNavBar extends StatelessWidget {
   final int currentIndex;
   final Function(int) onTap;
@@ -18,7 +20,7 @@ class FloatingNavBar extends StatelessWidget {
       padding: const EdgeInsets.all(16.0).copyWith(bottom: 32),
       child: Container(
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.surface,
+          color: Theme.of(context).colorScheme.inversePrimary,
           borderRadius: BorderRadius.circular(24),
           boxShadow: [
             BoxShadow(

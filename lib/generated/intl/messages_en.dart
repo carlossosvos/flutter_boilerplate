@@ -26,13 +26,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "app_title": MessageLookupByLibrary.simpleMessage("My App"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "dark_mode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "example_dialog_message":
             MessageLookupByLibrary.simpleMessage("Message of Alert Dialog"),
         "example_dialog_title":
             MessageLookupByLibrary.simpleMessage("Title of Alert Dialog"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "log_in": MessageLookupByLibrary.simpleMessage("Log In"),
+        "log_out": MessageLookupByLibrary.simpleMessage("Log Out"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "register": MessageLookupByLibrary.simpleMessage("Register"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "settings_language":
             MessageLookupByLibrary.simpleMessage("Select Language"),

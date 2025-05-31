@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/core/utils/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../di/injection.dart';
+import 'package:flutter_boilerplate/shared/di/injection.dart';
 
 /// The `LocaleCubit` class manages the application's locale state and allows for setting and loading
 /// the locale using shared preferences.

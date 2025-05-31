@@ -26,13 +26,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "app_title": MessageLookupByLibrary.simpleMessage("Mi Aplicación"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirmar"),
+        "dark_mode": MessageLookupByLibrary.simpleMessage("Modo Oscuro"),
         "example_dialog_message": MessageLookupByLibrary.simpleMessage(
             "Mensaje de Ventana Emergente"),
         "example_dialog_title":
             MessageLookupByLibrary.simpleMessage("Titulo de Ventana Emergente"),
         "home": MessageLookupByLibrary.simpleMessage("Inicio"),
+        "language": MessageLookupByLibrary.simpleMessage("Idioma"),
+        "log_in": MessageLookupByLibrary.simpleMessage("Iniciar Sesión"),
+        "log_out": MessageLookupByLibrary.simpleMessage("Cerrar Sesión"),
         "ok": MessageLookupByLibrary.simpleMessage("Aceptar"),
         "profile": MessageLookupByLibrary.simpleMessage("Perfil"),
+        "register": MessageLookupByLibrary.simpleMessage("Registrar"),
         "settings": MessageLookupByLibrary.simpleMessage("Ajustes"),
         "settings_language":
             MessageLookupByLibrary.simpleMessage("Seleccionar Idioma"),

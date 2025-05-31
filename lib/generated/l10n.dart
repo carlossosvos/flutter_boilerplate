@@ -179,6 +179,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Dark Mode`
+  String get dark_mode {
+    return Intl.message(
+      'Dark Mode',
+      name: 'dark_mode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log Out`
+  String get log_out {
+    return Intl.message(
+      'Log Out',
+      name: 'log_out',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log In`
+  String get log_in {
+    return Intl.message(
+      'Log In',
+      name: 'log_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get register {
+    return Intl.message(
+      'Register',
+      name: 'register',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

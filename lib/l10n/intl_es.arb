@@ -12,5 +12,10 @@
   "ok": "Aceptar",
   "home": "Inicio",
   "settings": "Ajustes",
-  "profile": "Perfil"
+  "profile": "Perfil",
+  "dark_mode": "Modo Oscuro",
+  "language": "Idioma",
+  "log_out": "Cerrar Sesión",
+  "log_in": "Iniciar Sesión",
+  "register": "Registrar"
 }

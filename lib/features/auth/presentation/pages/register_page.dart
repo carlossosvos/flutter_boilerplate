@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/features/auth/presentation/cubits/auth_cubit.dart';
 import 'package:flutter_boilerplate/features/auth/presentation/cubits/auth_state.dart';
+import 'package:flutter_boilerplate/generated/l10n.dart';
 import 'package:flutter_boilerplate/shared/presentation/widgets/atoms/main_button.dart';
 import 'package:flutter_boilerplate/shared/presentation/widgets/widgets.dart';
 import 'package:go_router/go_router.dart';
@@ -50,7 +51,7 @@ class RegisterPage extends StatelessWidget {
               obscureText: true,
             ),
             MainButton(
-              label: 'Register',
+              label: S.current.register,
               onPressed: () {
                 final email = _emailController.text;
                 final password = _passwordController.text;
@@ -62,7 +63,7 @@ class RegisterPage extends StatelessWidget {
             Spacer(),
             TextButton(
               onPressed: () => GoRouter.of(authContext).go('/'),
-              child: Text('Log In'),
+              child: Text(S.current.log_in),
             )
           ]),
         ),

@@ -12,10 +12,7 @@ import 'package:go_router/go_router.dart';
 class HomePage extends StatelessWidget {
   const HomePage({
     super.key,
-    required this.title,
   });
-
-  final String title;
 
   void _showCustomAlertDialog(BuildContext context) {
     //String localization
@@ -53,7 +50,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: Text(S.current.home),
           actions: [
             LocalePopupMenu(),
             IconButton(

@@ -33,6 +33,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // Create static router instance
+    final router = AppRouter().getRouter;
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -49,26 +52,16 @@ class MyApp extends StatelessWidget {
       ],
       child: Builder(
         builder: (context) {
-          final theme =
-              context.watch<AppThemeCubit>().state ? lightTheme : darkTheme;
-
-          final textThene = createTextTheme(
-            context,
-            "Advent Pro",
-            "Advent Pro",
-            theme,
-          );
-
-          final elevatedButtonTheme = createElevatedButtonThemeData(theme);
+          final isLightTheme = context.watch<AppThemeCubit>().state;
           final selectedLocale = context.watch<LocaleCubit>().state;
-          final inputTheme = InputTheme().inputTheme(theme);
+          final currentTheme = isLightTheme ? lightTheme : darkTheme;
 
           return Directionality(
             textDirection: TextDirection.ltr,
             child: FlavorBanner(
               flavor: F.name,
               child: MaterialApp.router(
-                localizationsDelegates: [
+                localizationsDelegates: const [
                   S.delegate,
                   GlobalMaterialLocalizations.delegate,
                   GlobalWidgetsLocalizations.delegate,
@@ -77,12 +70,15 @@ class MyApp extends StatelessWidget {
                 locale: selectedLocale,
                 supportedLocales: S.delegate.supportedLocales,
                 debugShowCheckedModeBanner: false,
-                routerConfig: AppRouter().getRouter,
+                routerConfig: router, // Use cached router instance
                 title: F.title,
-                theme: theme.copyWith(
-                  textTheme: textThene,
-                  inputDecorationTheme: inputTheme,
-                  elevatedButtonTheme: elevatedButtonTheme,
+                //themeMode: themeState,
+                theme: currentTheme.copyWith(
+                  textTheme: createTextTheme(
+                      context, "Advent Pro", "Advent Pro", currentTheme),
+                  inputDecorationTheme: InputTheme().inputTheme(currentTheme),
+                  elevatedButtonTheme:
+                      createElevatedButtonThemeData(currentTheme),
                 ),
               ),
             ),
